@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
-import { Navigate } from 'react-router-dom'
+import { Navigate, useLocation } from 'react-router-dom'
 
 export default function About() {
   const [count, setCount] = useState(0)
+  const { state } = useLocation()
+  console.log(state) // {name: 'dengwj', sex: '男'}
 
   return (
     <div>
