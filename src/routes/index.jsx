@@ -5,6 +5,7 @@ import Home from '../page/home'
 import About from '../page/about'
 import Message from '../page/message'
 import News from '../page/News'
+import Detail from '../page/detail'
 
 export default function UseRoutes() {
   const routes = useRoutes([
@@ -14,7 +15,13 @@ export default function UseRoutes() {
       children: [
         {
           path: 'message',
-          element: <Message />
+          element: <Message />,
+          children: [
+            {
+              path: 'detail/:name/:age',
+              element: <Detail />
+            }
+          ]
         },
         {
           path: 'news',
