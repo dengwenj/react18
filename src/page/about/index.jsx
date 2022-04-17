@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 
-
 export default function About() {
   const [count, setCount] = useState(0)
 
