@@ -12,9 +12,22 @@ export default function Message() {
   }
   return (
     <div>
+      {/* params 参数 */}
       <NavLink to={`detail/${person.name}/${person.age}`}>detail</NavLink>
+      {/* search 参数 */}
       <NavLink to={`detail2?name=${person2.name}&age=${person2.age}`}>detail2</NavLink>
+      {/* state 参数 */}
+      <NavLink 
+        to='detail3' 
+        state={{
+          name: 'hmm',
+          age: 23
+        }}
+      >
+        detail3
+      </NavLink>
 
+      {/* 路由占位 */}
       <Outlet />
     </div>
   )
