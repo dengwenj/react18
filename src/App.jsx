@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, createContext } from 'react'
+import Foo from './Foo'
+
+export const UserValue = createContext()
 
 export default function App() {
   /**
@@ -8,10 +11,19 @@ export default function App() {
    */
   const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    return () => {
+      console.log('更新和卸载的时候会被调用')
+    }
+  }, [count])
+
   return (
     <div>
       <h2>{count}</h2>
       <button onClick={() => setCount(count + 1)}>+1</button>
+      <UserValue.Provider value={{ name: 'dengwj', age:22 }}>
+        <Foo />
+      </UserValue.Provider>
     </div>
   )
 }
