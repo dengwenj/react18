@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react'
 import Foo from './Foo'
+import Demo from './Demo'
 
 export const UserValue = createContext()
 
@@ -24,6 +25,7 @@ export default function App() {
       <UserValue.Provider value={{ name: 'dengwj', age:22 }}>
         <Foo />
       </UserValue.Provider>
+      <Demo />
     </div>
   )
 }
